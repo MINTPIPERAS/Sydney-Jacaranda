@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f2eee5" />
+    <meta
+      name="description"
+      content="悉尼蓝花楹街角，一座由 Three.js 手工搭建的可交互微缩场景。"
+    />
+    <title>Jacaranda Corner · 蓝花楹街角</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f4efe5'/%3E%3Cpath d='M32 8c7 6 9 12 4 20 8-4 15-2 20 4-7 7-13 9-21 4 4 9 2 14-3 20-7-6-9-13-4-21-9 4-15 2-20-4 7-7 13-9 21-4-5-8-3-14 3-19Z' fill='%23846dad'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23f4efe5'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./vendor/three.module.js",
+          "three/addons/": "./vendor/addons/"
+        }
+      }
+    </script>
+  </head>
+  <body data-time="day" class="is-loading">
+    <div class="page">
+      <header class="masthead">
+        <div class="brand" aria-label="Jacaranda Corner">
+          <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24 4c5.6 5.2 7.7 10.1 4.1 16.7C34.1 17.6 39.4 19 44 24c-5.5 5.6-10.6 7.3-16.6 3.7 3.1 6.5 1.3 11.4-3.4 16.3-5.4-5.1-7.4-10.2-3.8-16.6C14.3 30.2 9 29 4 24c5.7-5.6 10.8-7.2 16.7-3.7C17.6 13.9 19.2 8.9 24 4Z"/>
+            <circle cx="24" cy="24" r="3.2"/>
+          </svg>
+          <div>
+            <h1>Jacaranda <em>Corner</em></h1>
+            <p>悉尼 · 蓝花楹街角</p>
+          </div>
+        </div>
+        <div class="edition">
+          <span>SPRING STUDY</span>
+          <span>33.8688° S / 151.2093° E</span>
+        </div>
+      </header>
+
+      <main class="stage" aria-label="悉尼蓝花楹街角三维微缩场景">
+        <canvas id="scene" aria-label="可旋转缩放的三维蓝花楹街角场景"></canvas>
+        <div class="stage-wash" aria-hidden="true"></div>
+
+        <div class="location-note" aria-hidden="true">
+          <span class="note-rule"></span>
+          <span>ONE CORNER<br />SEVEN TREES</span>
+        </div>
+
+        <div class="caption">
+          <p class="caption-eyebrow">A quiet corner, held in violet.</p>
+          <p class="caption-hint">
+            <span>拖动旋转</span><i></i><span>滚轮 / 双指缩放</span><i></i><span>轻点树冠落花</span>
+          </p>
+        </div>
+
+        <div class="control-dock">
+          <div class="time-switch" role="group" aria-label="场景时段">
+            <button type="button" data-time-choice="day" class="is-active" aria-pressed="true">白昼</button>
+            <button type="button" data-time-choice="dusk" aria-pressed="false">黄昏</button>
+            <button type="button" data-time-choice="night" aria-pressed="false">夜晚</button>
+            <span class="time-slider" aria-hidden="true"></span>
+          </div>
+          <button class="reset-button" type="button" aria-label="复位镜头" title="复位镜头">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5.7 8.2A8 8 0 1 1 4.4 14" />
+              <path d="M5.2 3.8v4.7h4.7" />
+            </svg>
+            <span>复位</span>
+          </button>
+        </div>
+
+        <div class="loader" aria-hidden="true">
+          <span class="loader-flower"></span>
+          <span>assembling the corner</span>
+        </div>
+      </main>
+
+      <footer class="colophon">
+        <span>THREE.JS · PROCEDURAL MINIATURE</span>
+        <span class="colophon-right">蓝花楹 / Jacaranda mimosifolia</span>
+      </footer>
+    </div>
+
+    <div class="paper-grain" aria-hidden="true"></div>
+    <div class="toast" role="status" aria-live="polite">一阵花瓣落下</div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

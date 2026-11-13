@@ -1,0 +1,11 @@
+{
+  "name": "sydney-jacaranda-corner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A hand-built Three.js miniature of a Sydney jacaranda street corner.",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs"
+  }
+}
